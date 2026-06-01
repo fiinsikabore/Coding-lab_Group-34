@@ -11,7 +11,7 @@ initialize_system(){
 	local dirs=("active_logs" "archived_logs" "reports")
 
 	for dir in "${dirs[@]}";do 
-		if [ ! -d "$dir"]; then 
+		if [ ! -d "$dir" ]; then 
 			echo "[-] Directory '$dir' not found. Creating '$dir' directory..."
 			mkdir -p "$dir"
 		else
@@ -19,3 +19,20 @@ initialize_system(){
 		fi 
 	done 
 }  
+#----Member 1 : THE ORCHESTRATOR
+main(){
+	clear 
+    echo "=================================================="
+    echo "       KNH ADMIN SYSTEM INITIALIZATION            "
+    echo "=================================================="
+
+    initialize_system
+    echo "--------------------------------------------------"
+
+    echo "--------------------------------------------------"
+    echo "[SUCCESS] System Environment Secured | $(date)"
+    echo "=================================================="
+}
+
+main
+
