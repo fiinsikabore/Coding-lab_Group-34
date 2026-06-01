@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Author: Regan Ayiecho | Role: Facility Auditor | Member 4
 # ==========================================
 # Script: hospital_analysis.sh
 # Objective: Clinical and facility metrics analytics
@@ -7,6 +8,7 @@
 WATER_LOG="active_logs/water_usage_log.log"
 
 # --- MEMBER 4: FACILITY AUDITOR ---
+# Calculates average water flow for ICU_WATER_RESERVE device
 water_audit() {
     echo "[*] Executing infrastructure utility audit..."
 
@@ -40,5 +42,4 @@ water_audit() {
     }' "$WATER_LOG"
 }
 
-# Calculates average water flow for ICU_WATER_RESERVE device
 water_audit
