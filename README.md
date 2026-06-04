@@ -12,6 +12,8 @@ A shell scripting project simulating a secure data pipeline for Kenyatta Nationa
 | Regan Ayiecho          | The Facility Auditor          | water_audit() and ICU metrics               |
 
 ## Project Structure
+
+```
 Coding-lab_Group-34/
 ├── hospital_system.py      # Python engine — generates sensor data
 ├── hospital_admin.sh       # Sets up folders and secures permissions
@@ -19,6 +21,7 @@ Coding-lab_Group-34/
 ├── hospital_archive.sh     # Rotates and archives logs
 ├── .gitignore              # Excludes patient data from GitHub
 └── README.md               # This file
+```
 
 ## How to Run
 
