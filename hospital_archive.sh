@@ -13,7 +13,7 @@ rotate_logs() {
         exit 1
     fi
 
-    local targets=("heart_rate" "temperature" "water_usage")
+    local targets=("heart_rate_log" "temperature_log" "water_usage_log")
 
     for log_base in "${targets[@]}"; do
         local source_file="${active_dir}/${log_base}.log"

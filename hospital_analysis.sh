@@ -17,8 +17,8 @@ process_vitals() {
     fi
     mkdir -p reports
     echo "--- CRITICAL PATIENT ALERTS DETECTED ---" > reports/critical_alerts.txt
-    grep "CRITICAL" "$HEART_LOG" "$TEMP_LOG" 2>/dev/null | awk -F' ' \
-    'BEGIN {OFS = "|"}
+    grep "CRITICAL" "$HEART_LOG" "$TEMP_LOG" 2>/dev/null | awk -F '|' '
+    BEGIN {OFS = "|"}
     {
         timestamp = $1
         sub(/^.*\.log:/, "", timestamp)
@@ -36,12 +36,12 @@ water_audit() {
         echo "[WARN] Water telemetry logs unavailable."
         return 1
     fi
-    awk -F ' | ' '
+    awk -F '|' '
     BEGIN { sum = 0; count = 0 }
     {
         dev = $2; gsub(/^ *| *$/, "", dev);
-        val = $3; gsub(/^ *| *$/, "", val);
-        if (dev == "ICU_WATER_RESERVE") {
+	val = $3; gsub(/^ *| *$/, "", val);
+     	    if (dev == "ICU_WATER_RESERVE") {
             sum += val
             count++
         }
